@@ -5,7 +5,37 @@ import (
 	"os"
 )
 
-type Config struct{}
+type Config struct {
+	ModelData ModelData `json:"model_data,omitempty"`
+	Services  []Service `json:"services,omitempty"`
+
+	Hostname string `json:"hostname,omitempty"`
+	Port     int    `json:"port,omitempty"`
+	TLS      TLS    `json:"tls,omitempty"`
+}
+
+type ServiceType string
+
+type Service struct {
+	Path    string      `json:"path,omitempty"`
+	Type    ServiceType `json:"type,omitempty"`
+	Port    int         `json:"port,omitempty"`
+	Logging Logging     `json:"logging,omitempty"`
+	Models  []string    `json:"models,omitempty"`
+}
+
+type ModelData struct {
+	Location string `json:"location,omitempty"`
+}
+
+type Logging struct {
+	Enabled bool `json:"enabled,omitempty"`
+}
+
+type TLS struct {
+	Cert string `json:"cert,omitempty"`
+	Key  string `json:"key,omitempty"`
+}
 
 func LoadFromFile(filename string) (*Config, error) {
 	c := &Config{}
