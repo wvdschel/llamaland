@@ -17,11 +17,12 @@ type Config struct {
 type ServiceType string
 
 type Service struct {
-	Path    string      `json:"path,omitempty"`
-	Type    ServiceType `json:"type,omitempty"`
-	Port    int         `json:"port,omitempty"`
-	Logging Logging     `json:"logging,omitempty"`
-	Models  []string    `json:"models,omitempty"`
+	APIPath string         `json:"path,omitempty"`
+	Type    ServiceType    `json:"type,omitempty"`
+	Spec    map[string]any `json:"spec"`
+	Port    int            `json:"port,omitempty"`
+	Logging Logging        `json:"logging,omitempty"`
+	Models  []string       `json:"models,omitempty"`
 }
 
 type ModelData struct {
