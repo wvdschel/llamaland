@@ -3,7 +3,11 @@ package config
 import (
 	"encoding/json"
 	"os"
+
+	"github.com/wvdschel/compute-maestro/xdg"
 )
+
+const DIRNAME = "compute-maestro"
 
 type Config struct {
 	ModelData ModelData `json:"model_data,omitempty"`
@@ -53,4 +57,28 @@ func LoadFromFile(filename string) (*Config, error) {
 	}
 
 	return c, nil
+}
+
+func Default() *Config {
+	return &Config{
+		ModelData: ModelData{
+			Location: xdg.DataHome() + DIRNAME,
+		},
+		Services: []Service{
+			{
+				APIPath: "",
+				Type:    "",
+				Spec:    map[string]any{},
+				Port:    0,
+				Logging: Logging{},
+				Models:  []string{},
+			},
+		},
+		Hostname: "",
+		Port:     18080,
+		TLS: TLS{
+			Cert: "",
+			Key:  "",
+		},
+	}
 }

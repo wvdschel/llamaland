@@ -8,7 +8,7 @@ import (
 	"github.com/wvdschel/compute-maestro/xdg"
 )
 
-var configFilename = flag.String("config", xdg.ConfigHome()+"/compute-maestro/config.json", "config file")
+var configFilename = flag.String("config", xdg.ConfigHome()+"/"+config.DIRNAME+"/config.json", "config file")
 
 func main() {
 	flag.Parse()

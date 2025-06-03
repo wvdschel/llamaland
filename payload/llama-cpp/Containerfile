@@ -1,0 +1,18 @@
+FROM docker.io/fedora:41 AS base
+RUN  dnf update --refresh -y
+RUN dnf install -y vulkan-loader curl 
+
+FROM base AS builder
+RUN dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64/cuda-fedora41.repo 
+RUN dnf install -y git cmake llvm clang cuda-toolkit-12-9 vulkan-headers vulkan-loader-devel glslc curl-devel
+ENV PATH="${PATH}:/usr/local/cuda-12.9/bin"
+WORKDIR /build
+RUN cd /build
+
+RUN git clone https://github.com/ggml-org/llama.cpp
+RUN cd /build/llama.cpp && cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/llama.cpp -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DGGML_VULKAN=ON && cmake --build build/ -j$(nproc)
+RUN cd /build/llama.cpp/build && make install
+
+FROM base
+COPY --from=builder /opt/llama.cpp /opt
+ENTRYPOINT ["/opt/llama.cpp/bin/llama-server"]
