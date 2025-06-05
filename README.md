@@ -1,13 +1,13 @@
-# Compute Maestro
+# Llamaland
 
-Compute maestro is an orchestration tool for hosting different AI and other compute intense services on a single machine.
+Llamaland is an orchestration tool for hosting different AI models and services on a single machine.
 
 ## Installation
 
-Currently, there are no packaged releases for Compute Maetro. You can install the latest development version of Compute Maestro using `go install`:
+Currently, there are no packaged releases for Llamaland. You can install the latest development version of Llamaland using `go install`:
 
     ```
-    go install github.com/compute-maestro/compute-maestro@master
+    go install github.com/wvdschel/llamaland@master
     ```
 
 ## Planned features
