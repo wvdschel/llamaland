@@ -11,8 +11,11 @@ RUN cd /build
 
 RUN git clone https://github.com/ggml-org/llama.cpp
 RUN cd /build/llama.cpp && cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/llama.cpp -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DGGML_VULKAN=ON && cmake --build build/ -j$(nproc)
-RUN cd /build/llama.cpp/build && make install
+RUN cd /build/llama.cpp/build && make install && git log --format="%h" | head -n > /opt/llama.cpp/commithash
 
 FROM base
 COPY --from=builder /opt/llama.cpp /opt
-ENTRYPOINT ["/opt/llama.cpp/bin/llama-server"]
+EXPOSE 8080
+ADD run.sh /usr/local/bin/run.sh
+VOLUME [ "/models" ]
+ENTRYPOINT ["/usr/local/bin/run.sh"]
