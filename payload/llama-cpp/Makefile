@@ -1,4 +1,4 @@
-.PHONY: latest publish tag
+.PHONY: latest publish
 
 latest:
 	docker build --no-cache -f Containerfile  . -t llamaherd/llama-cpp:latest

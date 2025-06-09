@@ -5,13 +5,15 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/api/types/network"
 	"github.com/docker/docker/client"
+	"github.com/docker/docker/pkg/stdcopy"
 	"github.com/google/uuid"
-	"github.com/wvdschel/compute-maestro/cmd/maestrod/config"
+	"github.com/wvdschel/llamaland/cmd/maestrod/config"
 )
 
 type Service struct {
@@ -27,14 +29,14 @@ func (s *Service) docker() *client.Client {
 }
 
 func (s *Service) loadSpec() error {
-	img, ok := s.cfg.Spec["image_name"]
+	img, ok := s.cfg.Spec["image"]
 	if !ok {
-		return errors.New("spec.image_name is required for docker services")
+		return errors.New("spec.image is required for docker services")
 	}
 
 	s.imageName, ok = img.(string)
 	if !ok {
-		return errors.New("spec.image_name must be a string")
+		return errors.New("spec.image must be a string")
 	}
 	return nil
 }
@@ -77,6 +79,14 @@ func (s *Service) Prepare(ctx context.Context) error {
 				MaximumRetryCount: 0,
 			},
 			Runtime: s.runtime.dockerRuntimeName,
+			Resources: container.Resources{
+				DeviceRequests: []container.DeviceRequest{
+					{
+						Count:        -1, // TODO: -1 is all GPUs, 0 is 1st, etc. (for nvidia runtime)
+						Capabilities: [][]string{{"gpu"}},
+					},
+				},
+			},
 		},
 		nil, nil, uuid.New().String())
 	if err != nil {
@@ -111,4 +121,28 @@ func (s *Service) Stop(ctx context.Context) error {
 	})
 
 	return err
+}
+
+func (s *Service) Logs(ctx context.Context) (io.ReadCloser, io.ReadCloser, error) {
+	stream, err := s.docker().ContainerLogs(ctx, s.containerID, container.LogsOptions{
+		ShowStdout: true,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+
+	stdout_r, stdout := io.Pipe()
+	stderr_r, stderr := io.Pipe()
+
+	go func() {
+		if _, err := stdcopy.StdCopy(stdout, stderr, stream); err != nil {
+			_ = stderr.CloseWithError(err)
+			_ = stdout.CloseWithError(err)
+		} else {
+			_ = stdout.Close()
+			_ = stderr.Close()
+		}
+	}()
+
+	return stdout_r, stderr_r, nil
 }

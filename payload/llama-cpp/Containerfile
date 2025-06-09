@@ -13,6 +13,7 @@ RUN cd /build/llama.cpp && cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/llama.cpp 
 RUN cd /build/llama.cpp/build && make install && git log --format="%h" | head -n1 > /opt/llama.cpp/commithash
 
 FROM base
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
 COPY --from=builder /opt/llama.cpp /opt/llama.cpp
 EXPOSE 8080
 ADD run.sh /usr/local/bin/run.sh

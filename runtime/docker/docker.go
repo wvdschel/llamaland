@@ -1,8 +1,11 @@
 package docker
 
 import (
+	"context"
+	"fmt"
+
 	"github.com/docker/docker/client"
-	"github.com/wvdschel/compute-maestro/cmd/maestrod/config"
+	"github.com/wvdschel/llamaland/cmd/maestrod/config"
 )
 
 type Runtime struct {
@@ -10,7 +13,7 @@ type Runtime struct {
 	dockerRuntimeName string
 }
 
-func NewRuntime(dockerRuntimeName string) (*Runtime, error) {
+func NewRuntime(opts *opts) (*Runtime, error) {
 	// TODO check available runtimes, pick one:
 	// - nvidia
 	// - rocm?
@@ -20,9 +23,19 @@ func NewRuntime(dockerRuntimeName string) (*Runtime, error) {
 		return nil, err
 	}
 
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	info, err := apiClient.Info(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get docker info: %w", err)
+	}
+
+	// TODO: process info.DiscoveredDevices
+	_ = info
+
 	return &Runtime{
 		dockerClient:      apiClient,
-		dockerRuntimeName: dockerRuntimeName,
+		dockerRuntimeName: opts.runtime,
 	}, nil
 }
 

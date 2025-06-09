@@ -1,6 +1,6 @@
-module github.com/wvdschel/compute-maestro
+module github.com/wvdschel/llamaland
 
-go 1.24.2
+go 1.23.9
 
 require (
 	github.com/docker/docker v28.2.2+incompatible
@@ -8,7 +8,7 @@ require (
 )
 
 require (
-	github.com/Microsoft/go-winio v0.4.14 // indirect
+	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/errdefs/pkg v0.3.0 // indirect
 	github.com/containerd/log v0.1.0 // indirect

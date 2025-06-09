@@ -1,0 +1,4 @@
+FROM docker.io/fedora:41
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
+
+ENTRYPOINT ["/bin/nvidia-smi", "-q", "-x"]
