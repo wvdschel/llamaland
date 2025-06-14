@@ -6,6 +6,7 @@ import (
 
 	"github.com/docker/docker/client"
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
+	"github.com/wvdschel/llamaland/runtime/common"
 )
 
 type Runtime struct {
@@ -13,7 +14,7 @@ type Runtime struct {
 	dockerRuntimeName string
 }
 
-func NewRuntime(opts *opts) (*Runtime, error) {
+func NewRuntime(opts *opts) (common.Runtime, error) {
 	// TODO check available runtimes, pick one:
 	// - nvidia
 	// - rocm?
@@ -39,7 +40,7 @@ func NewRuntime(opts *opts) (*Runtime, error) {
 	}, nil
 }
 
-func (r *Runtime) NewService(service *config.Service) *Service {
+func (r *Runtime) NewService(service *config.Service) common.Service {
 	return &Service{
 		runtime: r,
 		cfg:     service,

@@ -15,6 +15,7 @@ var DefaultFilename = xdg.ConfigHome() + "/" + DIRNAME + "/config.json"
 type Config struct {
 	ModelData ModelData          `json:"model_data,omitempty"`
 	Services  map[string]Service `json:"services,omitempty"`
+	Runtimes  map[string]Runtime `json:"runtimes,omitempty"`
 
 	Hostname string `json:"hostname,omitempty"`
 	Port     int    `json:"port,omitempty"`
@@ -31,6 +32,8 @@ type Service struct {
 	RequestLogging RequestLogging `json:"request_logging,omitempty"`
 	Models         []string       `json:"models,omitempty"`
 }
+
+type Runtime struct{}
 
 type ModelData struct {
 	Location string `json:"location,omitempty"`

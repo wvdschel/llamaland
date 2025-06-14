@@ -79,7 +79,7 @@ func (s *Service) Prepare(ctx context.Context) error {
 				MaximumRetryCount: 0,
 			},
 			Runtime: s.runtime.dockerRuntimeName,
-			Resources: container.Resources{
+			Resources: container.Resources{ // TODO derive from options
 				DeviceRequests: []container.DeviceRequest{
 					{
 						Count:        -1, // TODO: -1 is all GPUs, 0 is 1st, etc. (for nvidia runtime)
@@ -126,6 +126,8 @@ func (s *Service) Stop(ctx context.Context) error {
 func (s *Service) Logs(ctx context.Context) (io.ReadCloser, io.ReadCloser, error) {
 	stream, err := s.docker().ContainerLogs(ctx, s.containerID, container.LogsOptions{
 		ShowStdout: true,
+		ShowStderr: true,
+		Follow:     true,
 	})
 	if err != nil {
 		return nil, nil, err

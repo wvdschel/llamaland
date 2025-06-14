@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"time"
 
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
 	"github.com/wvdschel/llamaland/runtime/docker"
@@ -46,8 +45,6 @@ func main() {
 	if err := svc.Start(ctx); err != nil {
 		log.Fatalf("failed to start container: %v", err)
 	}
-
-	time.Sleep(3 * time.Second)
 
 	logReader, _, err := svc.Logs(ctx)
 	if err != nil {
