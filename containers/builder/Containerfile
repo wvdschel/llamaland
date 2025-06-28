@@ -1,0 +1,4 @@
+FROM quay.io/llamaland/base
+RUN dnf install -y git cmake llvm clang vulkan-headers vulkan-loader-devel glslc curl-devel
+WORKDIR /build
+RUN cd /build
