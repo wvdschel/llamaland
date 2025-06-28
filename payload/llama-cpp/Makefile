@@ -1,9 +1,9 @@
 .PHONY: latest publish
 
 latest:
-	docker build --no-cache -f Containerfile  . -t llamaherd/llama-cpp:latest
-	docker tag llamaherd/llama-cpp:latest llamaherd/llama-cpp:$(shell date +%Y%m%d%H%M)-$(shell docker run -it --entrypoint /bin/cat llamaherd/llama-cpp:latest /opt/llama.cpp/commithash)
+	docker build --no-cache -f Containerfile  . -t llamaland/llama-cpp:latest
+	docker tag llamaland/llama-cpp:latest llamaland/llama-cpp:$(shell date +%Y%m%d%H%M)-$(shell docker run -it --entrypoint /bin/cat llamaland/llama-cpp:latest /opt/llama.cpp/commithash)
 
 publish: latest
-	docker push llamaherd/llama-cpp:latest
-	docker push llamaherd/llama-cpp:$(shell date +%Y%m%d%H%M)-$(shell docker run -it --entrypoint /bin/cat llamaherd/llama-cpp:latest /opt/llama.cpp/commithash)
+	docker push llamaland/llama-cpp:latest
+	docker push llamaland/llama-cpp:$(shell date +%Y%m%d%H%M)-$(shell docker run -it --entrypoint /bin/cat llamaland/llama-cpp:latest /opt/llama.cpp/commithash)

@@ -1,7 +1,7 @@
 .PHONY: latest publish
 
 latest:
-	docker build --no-cache -f Containerfile  . -t llamaherd/nvidia-smi:latest
+	docker build --no-cache -f Containerfile  . -t llamaland/nvidia-smi:latest
 
 publish: latest
-	docker push llamaherd/nvidia-smi:latest
+	docker push llamaland/nvidia-smi:latest

@@ -91,7 +91,7 @@ func Default() *Config {
 			"/deepseek-r1-qwen3-8b": {
 				Type: "container",
 				Spec: map[string]any{
-					"image": "llamaherd/llama-cpp:latest",
+					"image": "llamaland/llama-cpp:latest",
 				},
 				RequestLogging: RequestLogging{
 					Enabled: true,

@@ -34,7 +34,7 @@ func main() {
 	svc := rt.NewService(&config.Service{
 		Type: "container",
 		Spec: map[string]any{
-			"image": "llamaherd/nvidia-smi:latest",
+			"image": "llamaland/nvidia-smi:latest",
 		},
 	})
 
