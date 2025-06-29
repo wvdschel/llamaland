@@ -1,4 +1,5 @@
-FROM quay.io/llamaland/base
+FROM quay.io/llamaland/base:latest
+ARG CACHE_EPOCH
 RUN dnf install -y git cmake llvm clang vulkan-headers vulkan-loader-devel glslc curl-devel
 WORKDIR /build
 RUN cd /build

@@ -1,0 +1,151 @@
+{
+  "ID": "4c972e7f-0ebc-4b87-bdb2-7fa6c2045c7d",
+  "Containers": 90,
+  "ContainersRunning": 0,
+  "ContainersPaused": 0,
+  "ContainersStopped": 84,
+  "Images": 301,
+  "Driver": "overlay",
+  "DriverStatus": [
+    [
+      "Backing Filesystem",
+      "btrfs"
+    ],
+    [
+      "Supports d_type",
+      "true"
+    ],
+    [
+      "Native Overlay Diff",
+      "true"
+    ],
+    [
+      "Using metacopy",
+      "false"
+    ],
+    [
+      "Supports shifting",
+      "false"
+    ],
+    [
+      "Supports volatile",
+      "true"
+    ]
+  ],
+  "Plugins": {
+    "Volume": [
+      "local"
+    ],
+    "Network": [
+      "bridge",
+      "macvlan",
+      "ipvlan"
+    ],
+    "Authorization": null,
+    "Log": [
+      "k8s-file",
+      "none",
+      "passthrough",
+      "journald"
+    ]
+  },
+  "MemoryLimit": true,
+  "SwapLimit": false,
+  "CpuCfsPeriod": false,
+  "CpuCfsQuota": false,
+  "CPUShares": false,
+  "CPUSet": false,
+  "PidsLimit": true,
+  "IPv4Forwarding": false,
+  "Debug": false,
+  "NFd": 11,
+  "OomKillDisable": false,
+  "NGoroutines": 14,
+  "SystemTime": "2025-06-29T08:36:56.782363797+02:00",
+  "LoggingDriver": "",
+  "CgroupDriver": "systemd",
+  "CgroupVersion": "2",
+  "NEventsListener": 0,
+  "KernelVersion": "6.15.4-arch2-1",
+  "OperatingSystem": "arch",
+  "OSVersion": "unknown",
+  "OSType": "linux",
+  "Architecture": "amd64",
+  "IndexServerAddress": "",
+  "RegistryConfig": {
+    "IndexConfigs": {},
+    "InsecureRegistryCIDRs": [],
+    "Mirrors": []
+  },
+  "NCPU": 32,
+  "MemTotal": 66647465984,
+  "GenericResources": null,
+  "DockerRootDir": "/home/wim/.local/share/containers/storage",
+  "HttpProxy": "",
+  "HttpsProxy": "",
+  "NoProxy": "",
+  "Name": "zbook",
+  "Labels": null,
+  "ExperimentalBuild": true,
+  "ServerVersion": "5.5.2",
+  "Runtimes": {
+    "crun": {
+      "path": "/usr/bin/crun"
+    },
+    "crun-vm": {
+      "path": "/usr/bin/crun-vm"
+    },
+    "crun-wasm": {
+      "path": "/usr/bin/crun-wasm"
+    },
+    "kata": {
+      "path": "/usr/bin/kata-runtime"
+    },
+    "krun": {
+      "path": "/usr/bin/krun"
+    },
+    "ocijail": {
+      "path": "/usr/local/bin/ocijail"
+    },
+    "runc": {
+      "path": "/usr/bin/runc"
+    },
+    "runj": {
+      "path": "/usr/local/bin/runj"
+    },
+    "runsc": {
+      "path": "/usr/bin/runsc"
+    },
+    "youki": {
+      "path": "/usr/local/bin/youki"
+    }
+  },
+  "DefaultRuntime": "runc",
+  "Swarm": {
+    "NodeID": "",
+    "NodeAddr": "",
+    "LocalNodeState": "inactive",
+    "ControlAvailable": false,
+    "Error": "",
+    "RemoteManagers": null
+  },
+  "LiveRestoreEnabled": false,
+  "Isolation": "",
+  "InitBinary": "",
+  "ContainerdCommit": {
+    "ID": ""
+  },
+  "RuncCommit": {
+    "ID": ""
+  },
+  "InitCommit": {
+    "ID": ""
+  },
+  "SecurityOptions": [
+    "name=seccomp,profile=default",
+    "name=rootless"
+  ],
+  "ProductLicense": "Apache-2.0",
+  "CDISpecDirs": null,
+  "Warnings": []
+}

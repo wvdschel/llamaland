@@ -1,4 +1,5 @@
-FROM quay.io/llamaland/builder
+FROM quay.io/llamaland/builder:latest
+ARG CACHE_EPOCH
 RUN dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64/cuda-fedora41.repo 
 RUN dnf install -y cuda-toolkit-12-9
 ENV PATH="${PATH}:/usr/local/cuda-12.9/bin"
