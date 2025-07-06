@@ -6,9 +6,7 @@ Llamaland is an orchestration tool for hosting different AI models and services 
 
 Currently, there are no packaged releases for Llamaland. You can install the latest development version of Llamaland using `go install`:
 
-    ```
     go install github.com/wvdschel/llamaland@master
-    ```
 
 ## Planned features
 

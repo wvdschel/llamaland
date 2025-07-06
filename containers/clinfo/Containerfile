@@ -1,0 +1,7 @@
+FROM quay.io/llamaland/base:latest
+ARG CACHE_EPOCH
+
+RUN dnf update --refresh -y && dnf install -y clinfo  rocm-opencl  intel-opencl mesa-libOpenCL mesa-dri-drivers spirv-llvm-translator spirv-tools-libs
+ENV RUSTICL_ENABLE=iris,llvmpipe,nouveau,panfrost,radeonsi
+
+ENTRYPOINT ["/usr/bin/clinfo", "--raw"]

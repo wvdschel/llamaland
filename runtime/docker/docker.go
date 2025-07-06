@@ -2,6 +2,7 @@ package docker
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/docker/docker/client"
@@ -12,6 +13,10 @@ import (
 type Runtime struct {
 	dockerClient      *client.Client
 	dockerRuntimeName string
+}
+
+func AutodetectRuntime() (common.Runtime, error) {
+	return nil, errors.New("not implemented")
 }
 
 func NewRuntime(opts *opts) (common.Runtime, error) {

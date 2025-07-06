@@ -26,6 +26,8 @@ func main() {
 
 	// TODO automatically select runtime / support multiple different runtimes at once
 
+	docker.DumpInfo()
+
 	rt, err := docker.NewRuntime(docker.DefaultOpts().WithRuntime("nvidia"))
 	if err != nil {
 		log.Fatalf("failed to load config: %v", err)

@@ -13,13 +13,15 @@ const DIRNAME = "llamaland"
 var DefaultFilename = xdg.ConfigHome() + "/" + DIRNAME + "/config.json"
 
 type Config struct {
-	ModelData ModelData          `json:"model_data,omitempty"`
-	Services  map[string]Service `json:"services,omitempty"`
-	Runtimes  map[string]Runtime `json:"runtimes,omitempty"`
+	Models   map[string]Model   `json:"models,omitempty"`
+	Services map[string]Service `json:"services,omitempty"`
+	Runtimes map[string]Runtime `json:"runtimes,omitempty"`
 
 	Hostname string `json:"hostname,omitempty"`
 	Port     int    `json:"port,omitempty"`
 	TLS      TLS    `json:"tls,omitempty"`
+
+	StorageLocations StorageConfig `json:"storage_locations,omitempty"`
 
 	filename string
 }
@@ -27,20 +29,27 @@ type Config struct {
 type ServiceType string
 
 type Service struct {
-	Type           ServiceType    `json:"type,omitempty"`
-	Spec           map[string]any `json:"spec"`
-	RequestLogging RequestLogging `json:"request_logging,omitempty"`
-	Models         []string       `json:"models,omitempty"`
+	Type    ServiceType    `json:"type,omitempty"`
+	Spec    map[string]any `json:"spec"`
+	Options ServiceOptions `json:"service_options,omitempty"`
+	Models  []string       `json:"models,omitempty"`
+}
+
+type StorageConfig struct {
+	Models string `json:"models,omitempty"`
+}
+
+type Model struct {
+	Name        string `json:"name,omitempty"`
+	URL         string `json:"url,omitempty"`
+	Size        int    `json:"size,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 type Runtime struct{}
 
-type ModelData struct {
-	Location string `json:"location,omitempty"`
-}
-
-type RequestLogging struct {
-	Enabled bool `json:"enabled,omitempty"`
+type ServiceOptions struct {
+	RequestLogging bool `json:"request_logging,omitempty"`
 }
 
 type TLS struct {
@@ -84,8 +93,8 @@ func (c *Config) Save() error {
 
 func Default() *Config {
 	return &Config{
-		ModelData: ModelData{
-			Location: xdg.DataHome() + DIRNAME,
+		StorageLocations: StorageConfig{
+			Models: xdg.DataHome() + DIRNAME + "/models",
 		},
 		Services: map[string]Service{
 			"/deepseek-r1-qwen3-8b": {
@@ -93,8 +102,8 @@ func Default() *Config {
 				Spec: map[string]any{
 					"image": "llamaland/llama-cpp:latest",
 				},
-				RequestLogging: RequestLogging{
-					Enabled: true,
+				Options: ServiceOptions{
+					RequestLogging: true,
 				},
 				Models: []string{
 					"https://huggingface.co/unsloth/DeepSeek-R1-0528-Qwen3-8B-GGUF/DeepSeek-R1-0528-Qwen3-8B-UD-Q4_K_XL.gguf",

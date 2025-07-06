@@ -8,6 +8,7 @@ import (
 	"io"
 
 	"github.com/docker/docker/api/types/container"
+	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/api/types/network"
 	"github.com/docker/docker/client"
@@ -46,16 +47,31 @@ func (s *Service) Prepare(ctx context.Context) error {
 		return err
 	}
 
-	pullLog, err := s.docker().ImagePull(ctx, s.imageName, image.PullOptions{})
+	imageList, err := s.docker().ImageList(ctx, image.ListOptions{
+		Filters: filters.NewArgs(
+			filters.KeyValuePair{
+				Key:   "reference",
+				Value: s.imageName,
+			},
+		),
+	})
 	if err != nil {
-		fmt.Printf("failed to pull docker image: %v\n", err)
+		fmt.Printf("failed to list docker images: %v\n", err)
 		return err
 	}
 
-	scanner := bufio.NewScanner(pullLog)
-	for scanner.Scan() {
+	if len(imageList) == 0 {
+		pullLog, err := s.docker().ImagePull(ctx, s.imageName, image.PullOptions{})
+		if err != nil {
+			fmt.Printf("failed to pull docker image: %v\n", err)
+			return err
+		}
+
+		scanner := bufio.NewScanner(pullLog)
+		for scanner.Scan() {
+		}
+		pullLog.Close()
 	}
-	pullLog.Close()
 
 	createResp, err := s.docker().ContainerCreate(ctx,
 		&container.Config{
@@ -84,6 +100,18 @@ func (s *Service) Prepare(ctx context.Context) error {
 					{
 						Count:        -1, // TODO: -1 is all GPUs, 0 is 1st, etc. (for nvidia runtime)
 						Capabilities: [][]string{{"gpu"}},
+					},
+				},
+				Devices: []container.DeviceMapping{ // Used for Vulkan & ROCm
+					{
+						PathOnHost:        "/dev/dri",
+						PathInContainer:   "/dev/dri",
+						CgroupPermissions: "rwm", // TODO
+					},
+					{
+						PathOnHost:        "/dev/kfd",
+						PathInContainer:   "/dev/kfd",
+						CgroupPermissions: "rwm",
 					},
 				},
 			},
