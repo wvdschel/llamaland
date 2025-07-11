@@ -12,6 +12,8 @@ import (
 )
 
 func Test_DumpRunningContainers(t *testing.T) {
+	t.SkipNow() // This test exists to dump the running containers to stdout. It is not meant to be run as a test.
+
 	apiClient, err := client.NewClientWithOpts(client.FromEnv)
 	require.NoError(t, err)
 
@@ -25,6 +27,8 @@ func Test_DumpRunningContainers(t *testing.T) {
 }
 
 func Test_DumpDockerInfo(t *testing.T) {
+	t.SkipNow() // This test exists to dump the docker info to stdout. It is not meant to be run as a test.
+
 	apiClient, err := client.NewClientWithOpts(client.FromEnv)
 	require.NoError(t, err)
 
