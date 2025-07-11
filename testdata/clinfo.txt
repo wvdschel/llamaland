@@ -1,0 +1,361 @@
+#PLATFORMS                                        2
+  CL_PLATFORM_NAME                                AMD Accelerated Parallel Processing
+  CL_PLATFORM_VENDOR                              Advanced Micro Devices, Inc.
+  CL_PLATFORM_VERSION                             OpenCL 2.1 AMD-APP (3625.0)
+  CL_PLATFORM_PROFILE                             FULL_PROFILE
+  CL_PLATFORM_EXTENSIONS                          cl_khr_icd cl_amd_event_callback
+  CL_PLATFORM_ICD_SUFFIX_KHR                      AMD
+  CL_PLATFORM_HOST_TIMER_RESOLUTION               1
+
+  CL_PLATFORM_NAME                                rusticl
+  CL_PLATFORM_VENDOR                              Mesa/X.org
+  CL_PLATFORM_VERSION                             OpenCL 3.0
+  CL_PLATFORM_PROFILE                             FULL_PROFILE
+  CL_PLATFORM_EXTENSIONS                          cl_khr_icd cl_khr_byte_addressable_store cl_khr_create_command_queue cl_khr_expect_assume cl_khr_extended_versioning cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_il_program cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_integer_dot_product cl_khr_spirv_no_integer_wrap_decoration cl_khr_suggested_local_work_size cl_khr_3d_image_writes cl_khr_depth_images cl_khr_device_uuid cl_khr_subgroup_shuffle cl_khr_subgroup_shuffle_relative
+  CL_PLATFORM_EXTENSIONS_WITH_VERSION             cl_khr_icd:0x400000 cl_khr_byte_addressable_store:0x400000 cl_khr_create_command_queue:0x400000 cl_khr_expect_assume:0x400000 cl_khr_extended_versioning:0x400000 cl_khr_global_int32_base_atomics:0x400000 cl_khr_global_int32_extended_atomics:0x400000 cl_khr_il_program:0x400000 cl_khr_local_int32_base_atomics:0x400000 cl_khr_local_int32_extended_atomics:0x400000 cl_khr_integer_dot_product:0x800000 cl_khr_spirv_no_integer_wrap_decoration:0x400000 cl_khr_suggested_local_work_size:0x400000 cl_khr_3d_image_writes:0x400000 cl_khr_depth_images:0x400000 cl_khr_device_uuid:0x400000 cl_khr_subgroup_shuffle:0x400000 cl_khr_subgroup_shuffle_relative:0x400000
+  CL_PLATFORM_NUMERIC_VERSION                     0xc00000
+  CL_PLATFORM_ICD_SUFFIX_KHR                      MESA
+  CL_PLATFORM_HOST_TIMER_RESOLUTION               1
+
+[AMD/*]     CL_PLATFORM_NAME                                AMD Accelerated Parallel Processing
+[AMD/*]   #DEVICES                                          1
+[AMD/0]     CL_DEVICE_NAME                                  gfx1151
+[AMD/0]     CL_DEVICE_VENDOR                                Advanced Micro Devices, Inc.
+[AMD/0]     CL_DEVICE_VENDOR_ID                             0x1002
+[AMD/0]     CL_DEVICE_VERSION                               OpenCL 2.0
+[AMD/0]     CL_DRIVER_VERSION                               3625.0 (HSA1.1,LC)
+[AMD/0]     CL_DEVICE_OPENCL_C_VERSION                      OpenCL C 2.0
+[AMD/0]     CL_DEVICE_TYPE                                  CL_DEVICE_TYPE_GPU
+[AMD/0]     CL_DEVICE_BOARD_NAME_AMD                        AMD Radeon Graphics
+[AMD/0]     CL_DEVICE_PCIE_ID_AMD                           0x1586
+[AMD/0]     CL_DEVICE_TOPOLOGY_AMD                          PCI-E, 0000:ffffffc3:00.0
+[AMD/0]     CL_DEVICE_PROFILE                               FULL_PROFILE
+[AMD/0]     CL_DEVICE_AVAILABLE                             CL_TRUE
+[AMD/0]     CL_DEVICE_COMPILER_AVAILABLE                    CL_TRUE
+[AMD/0]     CL_DEVICE_LINKER_AVAILABLE                      CL_TRUE
+[AMD/0]     CL_DEVICE_MAX_COMPUTE_UNITS                     20
+[AMD/0]     CL_DEVICE_SIMD_PER_COMPUTE_UNIT_AMD             4
+[AMD/0]     CL_DEVICE_SIMD_WIDTH_AMD                        32
+[AMD/0]     CL_DEVICE_SIMD_INSTRUCTION_WIDTH_AMD            1
+[AMD/0]     CL_DEVICE_MAX_CLOCK_FREQUENCY                   2900
+[AMD/0]     CL_DEVICE_GFXIP_MAJOR_AMD                       11
+[AMD/0]     CL_DEVICE_GFXIP_MINOR_AMD                       5
+[AMD/0]     CL_DEVICE_PARTITION_MAX_SUB_DEVICES             20
+[AMD/0]     CL_DEVICE_PARTITION_PROPERTIES                  CL_NONE
+[AMD/0]     CL_DEVICE_PARTITION_AFFINITY_DOMAIN
+[AMD/0]     CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS              3
+[AMD/0]     CL_DEVICE_MAX_WORK_ITEM_SIZES                   1024 1024 1024
+[AMD/0]     CL_DEVICE_MAX_WORK_GROUP_SIZE                   256
+[AMD/0]     CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_AMD         256
+[AMD/0]     CL_DEVICE_MAX_WORK_GROUP_SIZE_AMD               1024
+[AMD/0]     CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE    32
+[AMD/0]     CL_DEVICE_WAVEFRONT_WIDTH_AMD                   32
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR           4
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR              4
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT          2
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_SHORT             2
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT            1
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_INT               1
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG           1
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_LONG              1
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF           1
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF              1
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT          1
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_FLOAT             1
+[AMD/0]     CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE         1
+[AMD/0]     CL_DEVICE_NATIVE_VECTOR_WIDTH_DOUBLE            1
+[AMD/0]     CL_DEVICE_HALF_FP_CONFIG                        CL_FP_DENORM | CL_FP_INF_NAN | CL_FP_ROUND_TO_NEAREST | CL_FP_ROUND_TO_ZERO | CL_FP_ROUND_TO_INF | CL_FP_FMA
+[AMD/0]     CL_DEVICE_SINGLE_FP_CONFIG                      CL_FP_DENORM | CL_FP_INF_NAN | CL_FP_ROUND_TO_NEAREST | CL_FP_ROUND_TO_ZERO | CL_FP_ROUND_TO_INF | CL_FP_FMA | CL_FP_CORRECTLY_ROUNDED_DIVIDE_SQRT
+[AMD/0]     CL_DEVICE_DOUBLE_FP_CONFIG                      CL_FP_DENORM | CL_FP_INF_NAN | CL_FP_ROUND_TO_NEAREST | CL_FP_ROUND_TO_ZERO | CL_FP_ROUND_TO_INF | CL_FP_FMA
+[AMD/0]     CL_DEVICE_ADDRESS_BITS                          64
+[AMD/0]     CL_DEVICE_ENDIAN_LITTLE                         CL_TRUE
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_SIZE                       33323491328
+[AMD/0]     CL_DEVICE_GLOBAL_FREE_MEMORY_AMD                32229792 32229792
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CHANNELS_AMD               8
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CHANNEL_BANKS_AMD          4
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CHANNEL_BANK_WIDTH_AMD     256
+[AMD/0]     CL_DEVICE_ERROR_CORRECTION_SUPPORT              CL_FALSE
+[AMD/0]     CL_DEVICE_MAX_MEM_ALLOC_SIZE                    28324967624
+[AMD/0]     CL_DEVICE_HOST_UNIFIED_MEMORY                   CL_TRUE
+[AMD/0]     CL_DEVICE_SVM_CAPABILITIES                      CL_DEVICE_SVM_COARSE_GRAIN_BUFFER | CL_DEVICE_SVM_FINE_GRAIN_BUFFER
+[AMD/0]     CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE              128
+[AMD/0]     CL_DEVICE_MEM_BASE_ADDR_ALIGN                   1024
+[AMD/0]     CL_DEVICE_PREFERRED_PLATFORM_ATOMIC_ALIGNMENT   0
+[AMD/0]     CL_DEVICE_PREFERRED_GLOBAL_ATOMIC_ALIGNMENT     0
+[AMD/0]     CL_DEVICE_PREFERRED_LOCAL_ATOMIC_ALIGNMENT      0
+[AMD/0]     CL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE              28324967624
+[AMD/0]     CL_DEVICE_GLOBAL_VARIABLE_PREFERRED_TOTAL_SIZE  33323491328
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CACHE_TYPE                 CL_READ_WRITE_CACHE
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CACHE_SIZE                 32768
+[AMD/0]     CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZE             128
+[AMD/0]     CL_DEVICE_IMAGE_SUPPORT                         CL_TRUE
+[AMD/0]     CL_DEVICE_MAX_SAMPLERS                          16
+[AMD/0]     CL_DEVICE_IMAGE_MAX_BUFFER_SIZE                 134217728
+[AMD/0]     CL_DEVICE_IMAGE_MAX_ARRAY_SIZE                  8192
+[AMD/0]     CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT          256
+[AMD/0]     CL_DEVICE_IMAGE_PITCH_ALIGNMENT                 256
+[AMD/0]     CL_DEVICE_IMAGE2D_MAX_HEIGHT                    16384
+[AMD/0]     CL_DEVICE_IMAGE2D_MAX_WIDTH                     16384
+[AMD/0]     CL_DEVICE_IMAGE3D_MAX_HEIGHT                    16384
+[AMD/0]     CL_DEVICE_IMAGE3D_MAX_WIDTH                     16384
+[AMD/0]     CL_DEVICE_IMAGE3D_MAX_DEPTH                     8192
+[AMD/0]     CL_DEVICE_MAX_READ_IMAGE_ARGS                   128
+[AMD/0]     CL_DEVICE_MAX_WRITE_IMAGE_ARGS                  8
+[AMD/0]     CL_DEVICE_MAX_READ_WRITE_IMAGE_ARGS             64
+[AMD/0]     CL_DEVICE_MAX_PIPE_ARGS                         16
+[AMD/0]     CL_DEVICE_PIPE_MAX_ACTIVE_RESERVATIONS          16
+[AMD/0]     CL_DEVICE_PIPE_MAX_PACKET_SIZE                  2555163848
+[AMD/0]     CL_DEVICE_LOCAL_MEM_TYPE                        CL_LOCAL
+[AMD/0]     CL_DEVICE_LOCAL_MEM_SIZE                        65536
+[AMD/0]     CL_DEVICE_LOCAL_MEM_SIZE_PER_COMPUTE_UNIT_AMD   65536
+[AMD/0]     CL_DEVICE_LOCAL_MEM_BANKS_AMD                   32
+[AMD/0]     CL_DEVICE_MAX_CONSTANT_ARGS                     8
+[AMD/0]     CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE              28324967624
+[AMD/0]     CL_DEVICE_PREFERRED_CONSTANT_BUFFER_SIZE_AMD    16384
+[AMD/0]     CL_DEVICE_MAX_PARAMETER_SIZE                    1024
+[AMD/0]     CL_DEVICE_QUEUE_ON_HOST_PROPERTIES              CL_QUEUE_PROFILING_ENABLE
+[AMD/0]     CL_DEVICE_QUEUE_ON_DEVICE_PROPERTIES            CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE | CL_QUEUE_PROFILING_ENABLE
+[AMD/0]     CL_DEVICE_QUEUE_ON_DEVICE_PREFERRED_SIZE        262144
+[AMD/0]     CL_DEVICE_QUEUE_ON_DEVICE_MAX_SIZE              8388608
+[AMD/0]     CL_DEVICE_MAX_ON_DEVICE_QUEUES                  1
+[AMD/0]     CL_DEVICE_MAX_ON_DEVICE_EVENTS                  1024
+[AMD/0]     CL_DEVICE_PREFERRED_INTEROP_USER_SYNC           CL_TRUE
+[AMD/0]     CL_DEVICE_NUM_P2P_DEVICES_AMD                   0
+[AMD/0]     CL_DEVICE_PROFILING_TIMER_RESOLUTION            1
+[AMD/0]     CL_DEVICE_PROFILING_TIMER_OFFSET_AMD            0
+[AMD/0]     CL_DEVICE_EXECUTION_CAPABILITIES                CL_EXEC_KERNEL
+[AMD/0]     CL_DEVICE_THREAD_TRACE_SUPPORTED_AMD            CL_FALSE
+[AMD/0]     CL_DEVICE_AVAILABLE_ASYNC_QUEUES_AMD            8
+[AMD/0]     CL_DEVICE_MAX_REAL_TIME_COMPUTE_QUEUES_AMD      8
+[AMD/0]     CL_DEVICE_MAX_REAL_TIME_COMPUTE_UNITS_AMD       20
+[AMD/0]     CL_DEVICE_PRINTF_BUFFER_SIZE                    4194304
+[AMD/0]     CL_DEVICE_BUILT_IN_KERNELS
+[AMD/0]     CL_DEVICE_EXTENSIONS                            cl_khr_fp64 cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_int64_base_atomics cl_khr_int64_extended_atomics cl_khr_3d_image_writes cl_khr_byte_addressable_store cl_khr_fp16 cl_khr_gl_sharing cl_amd_device_attribute_query cl_amd_media_ops cl_amd_media_ops2 cl_khr_image2d_from_buffer cl_khr_subgroups cl_khr_depth_images cl_amd_copy_buffer_p2p cl_amd_assembly_program
+
+[MESA/*]    CL_PLATFORM_NAME                                rusticl
+[MESA/*]  #DEVICES                                          2
+[MESA/0]    CL_DEVICE_NAME                                  AMD Radeon Graphics (radeonsi, gfx1151, LLVM 19.1.7, DRM 3.63, 6.15.5-arch1-1)
+[MESA/0]    CL_DEVICE_VENDOR                                AMD
+[MESA/0]    CL_DEVICE_VENDOR_ID                             0x1002
+[MESA/0]    CL_DEVICE_VERSION                               OpenCL 3.0
+[MESA/0]    CL_DEVICE_UUID_KHR                              00000000-c300-0000-0000-000000000000
+[MESA/0]    CL_DRIVER_UUID_KHR                              414d442d-4d45-5341-2d44-525600000000
+[MESA/0]    CL_DEVICE_LUID_VALID_KHR                        CL_FALSE
+[MESA/0]    CL_DEVICE_LUID_KHR                              0000-000000000000
+[MESA/0]    CL_DEVICE_NODE_MASK_KHR                         0
+[MESA/0]    CL_DEVICE_NUMERIC_VERSION                       0xc00000
+[MESA/0]    CL_DRIVER_VERSION                               25.0.7
+[MESA/0]    CL_DEVICE_OPENCL_C_VERSION                      OpenCL C 1.2
+[MESA/0]    CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR          0x402000
+[MESA/0]    CL_DEVICE_OPENCL_C_ALL_VERSIONS                 OpenCL C:0xc00000 OpenCL C:0x402000 OpenCL C:0x401000 OpenCL C:0x400000
+[MESA/0]    CL_DEVICE_OPENCL_C_FEATURES                     __opencl_c_integer_dot_product_input_4x8bit:0x800000 __opencl_c_integer_dot_product_input_4x8bit_packed:0x800000 __opencl_c_int64:0x400000 __opencl_c_images:0x400000 __opencl_c_read_write_images:0x400000 __opencl_c_3d_image_writes:0x400000 __opencl_c_subgroups:0x400000
+[MESA/0]    CL_DEVICE_LATEST_CONFORMANCE_VERSION_PASSED     v0000-01-01-00
+[MESA/0]    CL_DEVICE_TYPE                                  CL_DEVICE_TYPE_GPU
+[MESA/0]    CL_DEVICE_PCI_BUS_INFO_KHR                      PCI-E, 0000:c3:00.0
+[MESA/0]    CL_DEVICE_PROFILE                               EMBEDDED_PROFILE
+[MESA/0]    CL_DEVICE_AVAILABLE                             CL_TRUE
+[MESA/0]    CL_DEVICE_COMPILER_AVAILABLE                    CL_TRUE
+[MESA/0]    CL_DEVICE_LINKER_AVAILABLE                      CL_TRUE
+[MESA/0]    CL_DEVICE_MAX_COMPUTE_UNITS                     40
+[MESA/0]    CL_DEVICE_MAX_CLOCK_FREQUENCY                   2900
+[MESA/0]    CL_DEVICE_PARTITION_MAX_SUB_DEVICES             0
+[MESA/0]    CL_DEVICE_PARTITION_PROPERTIES                  CL_NONE
+[MESA/0]    CL_DEVICE_PARTITION_AFFINITY_DOMAIN
+[MESA/0]    CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS              3
+[MESA/0]    CL_DEVICE_MAX_WORK_ITEM_SIZES                   1024 1024 1024
+[MESA/0]    CL_DEVICE_MAX_WORK_GROUP_SIZE                   1024
+[MESA/0]    CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_MULTIPLE    64
+[MESA/0]    CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE    64
+[MESA/0]    CL_DEVICE_MAX_NUM_SUB_GROUPS                    32
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR           1
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR              1
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT          1
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_SHORT             1
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT            1
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_INT               1
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG           1
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_LONG              1
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF           0
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF              0
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT          1
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_FLOAT             1
+[MESA/0]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE         0
+[MESA/0]    CL_DEVICE_NATIVE_VECTOR_WIDTH_DOUBLE            0
+[MESA/0]    CL_DEVICE_SINGLE_FP_CONFIG                      CL_FP_INF_NAN | CL_FP_ROUND_TO_NEAREST
+[MESA/0]    CL_DEVICE_ADDRESS_BITS                          64
+[MESA/0]    CL_DEVICE_ENDIAN_LITTLE                         CL_TRUE
+[MESA/0]    CL_DEVICE_GLOBAL_MEM_SIZE                       536870912
+[MESA/0]    CL_DEVICE_ERROR_CORRECTION_SUPPORT              CL_FALSE
+[MESA/0]    CL_DEVICE_MAX_MEM_ALLOC_SIZE                    2147483648
+[MESA/0]    CL_DEVICE_HOST_UNIFIED_MEMORY                   CL_FALSE
+[MESA/0]    CL_DEVICE_SVM_CAPABILITIES
+[MESA/0]    CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE              128
+[MESA/0]    CL_DEVICE_MEM_BASE_ADDR_ALIGN                   4096
+[MESA/0]    CL_DEVICE_PREFERRED_PLATFORM_ATOMIC_ALIGNMENT   0
+[MESA/0]    CL_DEVICE_PREFERRED_GLOBAL_ATOMIC_ALIGNMENT     0
+[MESA/0]    CL_DEVICE_PREFERRED_LOCAL_ATOMIC_ALIGNMENT      0
+[MESA/0]    CL_DEVICE_ATOMIC_MEMORY_CAPABILITIES            CL_DEVICE_ATOMIC_ORDER_RELAXED | CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP
+[MESA/0]    CL_DEVICE_ATOMIC_FENCE_CAPABILITIES             CL_DEVICE_ATOMIC_ORDER_RELAXED | CL_DEVICE_ATOMIC_ORDER_ACQ_REL | CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP
+[MESA/0]    CL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE              0
+[MESA/0]    CL_DEVICE_GLOBAL_VARIABLE_PREFERRED_TOTAL_SIZE  0
+[MESA/0]    CL_DEVICE_GLOBAL_MEM_CACHE_TYPE                 CL_NONE
+[MESA/0]    CL_DEVICE_IMAGE_SUPPORT                         CL_TRUE
+[MESA/0]    CL_DEVICE_MAX_SAMPLERS                          32
+[MESA/0]    CL_DEVICE_IMAGE_MAX_BUFFER_SIZE                 134217728
+[MESA/0]    CL_DEVICE_IMAGE_MAX_ARRAY_SIZE                  8192
+[MESA/0]    CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT          0
+[MESA/0]    CL_DEVICE_IMAGE_PITCH_ALIGNMENT                 0
+[MESA/0]    CL_DEVICE_IMAGE2D_MAX_HEIGHT                    16384
+[MESA/0]    CL_DEVICE_IMAGE2D_MAX_WIDTH                     16384
+[MESA/0]    CL_DEVICE_IMAGE3D_MAX_HEIGHT                    8192
+[MESA/0]    CL_DEVICE_IMAGE3D_MAX_WIDTH                     8192
+[MESA/0]    CL_DEVICE_IMAGE3D_MAX_DEPTH                     8192
+[MESA/0]    CL_DEVICE_MAX_READ_IMAGE_ARGS                   32
+[MESA/0]    CL_DEVICE_MAX_WRITE_IMAGE_ARGS                  16
+[MESA/0]    CL_DEVICE_MAX_READ_WRITE_IMAGE_ARGS             16
+[MESA/0]    CL_DEVICE_PIPE_SUPPORT                          CL_FALSE
+[MESA/0]    CL_DEVICE_MAX_PIPE_ARGS                         0
+[MESA/0]    CL_DEVICE_PIPE_MAX_ACTIVE_RESERVATIONS          0
+[MESA/0]    CL_DEVICE_PIPE_MAX_PACKET_SIZE                  0
+[MESA/0]    CL_DEVICE_LOCAL_MEM_TYPE                        CL_GLOBAL
+[MESA/0]    CL_DEVICE_LOCAL_MEM_SIZE                        65536
+[MESA/0]    CL_DEVICE_MAX_CONSTANT_ARGS                     16
+[MESA/0]    CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE              67108864
+[MESA/0]    CL_DEVICE_GENERIC_ADDRESS_SPACE_SUPPORT         CL_FALSE
+[MESA/0]    CL_DEVICE_MAX_PARAMETER_SIZE                    4096
+[MESA/0]    CL_DEVICE_QUEUE_ON_HOST_PROPERTIES              CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE | CL_QUEUE_PROFILING_ENABLE
+[MESA/0]    CL_DEVICE_DEVICE_ENQUEUE_CAPABILITIES
+[MESA/0]    CL_DEVICE_QUEUE_ON_DEVICE_PROPERTIES
+[MESA/0]    CL_DEVICE_QUEUE_ON_DEVICE_PREFERRED_SIZE        0
+[MESA/0]    CL_DEVICE_QUEUE_ON_DEVICE_MAX_SIZE              0
+[MESA/0]    CL_DEVICE_MAX_ON_DEVICE_QUEUES                  0
+[MESA/0]    CL_DEVICE_MAX_ON_DEVICE_EVENTS                  0
+[MESA/0]    CL_DEVICE_PREFERRED_INTEROP_USER_SYNC           CL_TRUE
+[MESA/0]    CL_DEVICE_PROFILING_TIMER_RESOLUTION            10
+[MESA/0]    CL_DEVICE_EXECUTION_CAPABILITIES                CL_EXEC_KERNEL
+[MESA/0]    CL_DEVICE_NON_UNIFORM_WORK_GROUP_SUPPORT        CL_FALSE
+[MESA/0]    CL_DEVICE_WORK_GROUP_COLLECTIVE_FUNCTIONS_SUPPORT  CL_FALSE
+[MESA/0]    CL_DEVICE_SUB_GROUP_INDEPENDENT_FORWARD_PROGRESS  CL_FALSE
+[MESA/0]    CL_DEVICE_IL_VERSION                            SPIR-V_1.0 SPIR-V_1.1 SPIR-V_1.2 SPIR-V_1.3 SPIR-V_1.4
+[MESA/0]    CL_DEVICE_ILS_WITH_VERSION                      SPIR-V:0x400000 SPIR-V:0x401000 SPIR-V:0x402000 SPIR-V:0x403000 SPIR-V:0x404000
+[MESA/0]    CL_DEVICE_PRINTF_BUFFER_SIZE                    1048576
+[MESA/0]    CL_DEVICE_BUILT_IN_KERNELS
+[MESA/0]    CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION
+[MESA/0]    CL_DEVICE_EXTENSIONS                            cl_khr_byte_addressable_store cl_khr_create_command_queue cl_khr_expect_assume cl_khr_extended_versioning cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_il_program cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_integer_dot_product cl_khr_spirv_no_integer_wrap_decoration cl_khr_suggested_local_work_size cl_khr_gl_sharing cles_khr_int64 cl_khr_3d_image_writes cl_khr_depth_images cl_khr_pci_bus_info cl_khr_device_uuid cl_khr_subgroup_shuffle cl_khr_subgroup_shuffle_relative
+[MESA/0]    CL_DEVICE_EXTENSIONS_WITH_VERSION               cl_khr_byte_addressable_store:0x400000 cl_khr_create_command_queue:0x400000 cl_khr_expect_assume:0x400000 cl_khr_extended_versioning:0x400000 cl_khr_global_int32_base_atomics:0x400000 cl_khr_global_int32_extended_atomics:0x400000 cl_khr_il_program:0x400000 cl_khr_local_int32_base_atomics:0x400000 cl_khr_local_int32_extended_atomics:0x400000 cl_khr_integer_dot_product:0x800000 cl_khr_spirv_no_integer_wrap_decoration:0x400000 cl_khr_suggested_local_work_size:0x400000 cl_khr_gl_sharing:0x400000 cles_khr_int64:0x400000 cl_khr_3d_image_writes:0x400000 cl_khr_depth_images:0x400000 cl_khr_pci_bus_info:0x400000 cl_khr_device_uuid:0x400000 cl_khr_subgroup_shuffle:0x400000 cl_khr_subgroup_shuffle_relative:0x400000
+
+[MESA/1]    CL_DEVICE_NAME                                  llvmpipe (LLVM 19.1.7, 256 bits)
+[MESA/1]    CL_DEVICE_VENDOR                                Mesa
+[MESA/1]    CL_DEVICE_VENDOR_ID                             0
+[MESA/1]    CL_DEVICE_VERSION                               OpenCL 3.0
+[MESA/1]    CL_DEVICE_UUID_KHR                              6d657361-3235-2e30-2e37-000000000000
+[MESA/1]    CL_DRIVER_UUID_KHR                              6c6c766d-7069-7065-5555-494400000000
+[MESA/1]    CL_DEVICE_LUID_VALID_KHR                        CL_FALSE
+[MESA/1]    CL_DEVICE_LUID_KHR                              0000-000000000000
+[MESA/1]    CL_DEVICE_NODE_MASK_KHR                         0
+[MESA/1]    CL_DEVICE_NUMERIC_VERSION                       0xc00000
+[MESA/1]    CL_DRIVER_VERSION                               25.0.7
+[MESA/1]    CL_DEVICE_OPENCL_C_VERSION                      OpenCL C 1.2
+[MESA/1]    CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR          0x402000
+[MESA/1]    CL_DEVICE_OPENCL_C_ALL_VERSIONS                 OpenCL C:0xc00000 OpenCL C:0x402000 OpenCL C:0x401000 OpenCL C:0x400000
+[MESA/1]    CL_DEVICE_OPENCL_C_FEATURES                     __opencl_c_integer_dot_product_input_4x8bit:0x800000 __opencl_c_integer_dot_product_input_4x8bit_packed:0x800000 __opencl_c_int64:0x400000 __opencl_c_images:0x400000 __opencl_c_read_write_images:0x400000 __opencl_c_3d_image_writes:0x400000 __opencl_c_subgroups:0x400000
+[MESA/1]    CL_DEVICE_LATEST_CONFORMANCE_VERSION_PASSED     v0000-01-01-00
+[MESA/1]    CL_DEVICE_TYPE                                  CL_DEVICE_TYPE_CPU
+[MESA/1]    CL_DEVICE_PROFILE                               FULL_PROFILE
+[MESA/1]    CL_DEVICE_AVAILABLE                             CL_TRUE
+[MESA/1]    CL_DEVICE_COMPILER_AVAILABLE                    CL_TRUE
+[MESA/1]    CL_DEVICE_LINKER_AVAILABLE                      CL_TRUE
+[MESA/1]    CL_DEVICE_MAX_COMPUTE_UNITS                     8
+[MESA/1]    CL_DEVICE_MAX_CLOCK_FREQUENCY                   300
+[MESA/1]    CL_DEVICE_PARTITION_MAX_SUB_DEVICES             0
+[MESA/1]    CL_DEVICE_PARTITION_PROPERTIES                  CL_NONE
+[MESA/1]    CL_DEVICE_PARTITION_AFFINITY_DOMAIN
+[MESA/1]    CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS              3
+[MESA/1]    CL_DEVICE_MAX_WORK_ITEM_SIZES                   1024 1024 1024
+[MESA/1]    CL_DEVICE_MAX_WORK_GROUP_SIZE                   1024
+[MESA/1]    CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_MULTIPLE    8
+[MESA/1]    CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE    8
+[MESA/1]    CL_DEVICE_MAX_NUM_SUB_GROUPS                    128
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR           1
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR              1
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT          1
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_SHORT             1
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT            1
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_INT               1
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG           1
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_LONG              1
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF           0
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF              0
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT          1
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_FLOAT             1
+[MESA/1]    CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE         0
+[MESA/1]    CL_DEVICE_NATIVE_VECTOR_WIDTH_DOUBLE            0
+[MESA/1]    CL_DEVICE_SINGLE_FP_CONFIG                      CL_FP_INF_NAN | CL_FP_ROUND_TO_NEAREST
+[MESA/1]    CL_DEVICE_ADDRESS_BITS                          64
+[MESA/1]    CL_DEVICE_ENDIAN_LITTLE                         CL_TRUE
+[MESA/1]    CL_DEVICE_GLOBAL_MEM_SIZE                       66646982656
+[MESA/1]    CL_DEVICE_ERROR_CORRECTION_SUPPORT              CL_FALSE
+[MESA/1]    CL_DEVICE_MAX_MEM_ALLOC_SIZE                    2147483648
+[MESA/1]    CL_DEVICE_HOST_UNIFIED_MEMORY                   CL_TRUE
+[MESA/1]    CL_DEVICE_SVM_CAPABILITIES                      CL_DEVICE_SVM_COARSE_GRAIN_BUFFER | CL_DEVICE_SVM_FINE_GRAIN_BUFFER | CL_DEVICE_SVM_FINE_GRAIN_SYSTEM
+[MESA/1]    CL_DEVICE_SVM_CAPABILITIES_ARM                  CL_DEVICE_SVM_COARSE_GRAIN_BUFFER | CL_DEVICE_SVM_FINE_GRAIN_BUFFER | CL_DEVICE_SVM_FINE_GRAIN_SYSTEM
+[MESA/1]    CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE              128
+[MESA/1]    CL_DEVICE_MEM_BASE_ADDR_ALIGN                   4096
+[MESA/1]    CL_DEVICE_PREFERRED_PLATFORM_ATOMIC_ALIGNMENT   0
+[MESA/1]    CL_DEVICE_PREFERRED_GLOBAL_ATOMIC_ALIGNMENT     0
+[MESA/1]    CL_DEVICE_PREFERRED_LOCAL_ATOMIC_ALIGNMENT      0
+[MESA/1]    CL_DEVICE_ATOMIC_MEMORY_CAPABILITIES            CL_DEVICE_ATOMIC_ORDER_RELAXED | CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP
+[MESA/1]    CL_DEVICE_ATOMIC_FENCE_CAPABILITIES             CL_DEVICE_ATOMIC_ORDER_RELAXED | CL_DEVICE_ATOMIC_ORDER_ACQ_REL | CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP
+[MESA/1]    CL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE              0
+[MESA/1]    CL_DEVICE_GLOBAL_VARIABLE_PREFERRED_TOTAL_SIZE  0
+[MESA/1]    CL_DEVICE_GLOBAL_MEM_CACHE_TYPE                 CL_NONE
+[MESA/1]    CL_DEVICE_IMAGE_SUPPORT                         CL_TRUE
+[MESA/1]    CL_DEVICE_MAX_SAMPLERS                          32
+[MESA/1]    CL_DEVICE_IMAGE_MAX_BUFFER_SIZE                 134217728
+[MESA/1]    CL_DEVICE_IMAGE_MAX_ARRAY_SIZE                  2048
+[MESA/1]    CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT          1
+[MESA/1]    CL_DEVICE_IMAGE_PITCH_ALIGNMENT                 1
+[MESA/1]    CL_DEVICE_IMAGE2D_MAX_HEIGHT                    16384
+[MESA/1]    CL_DEVICE_IMAGE2D_MAX_WIDTH                     16384
+[MESA/1]    CL_DEVICE_IMAGE3D_MAX_HEIGHT                    2048
+[MESA/1]    CL_DEVICE_IMAGE3D_MAX_WIDTH                     2048
+[MESA/1]    CL_DEVICE_IMAGE3D_MAX_DEPTH                     2048
+[MESA/1]    CL_DEVICE_MAX_READ_IMAGE_ARGS                   128
+[MESA/1]    CL_DEVICE_MAX_WRITE_IMAGE_ARGS                  64
+[MESA/1]    CL_DEVICE_MAX_READ_WRITE_IMAGE_ARGS             64
+[MESA/1]    CL_DEVICE_PIPE_SUPPORT                          CL_FALSE
+[MESA/1]    CL_DEVICE_MAX_PIPE_ARGS                         0
+[MESA/1]    CL_DEVICE_PIPE_MAX_ACTIVE_RESERVATIONS          0
+[MESA/1]    CL_DEVICE_PIPE_MAX_PACKET_SIZE                  0
+[MESA/1]    CL_DEVICE_LOCAL_MEM_TYPE                        CL_GLOBAL
+[MESA/1]    CL_DEVICE_LOCAL_MEM_SIZE                        32768
+[MESA/1]    CL_DEVICE_MAX_CONSTANT_ARGS                     16
+[MESA/1]    CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE              67108864
+[MESA/1]    CL_DEVICE_GENERIC_ADDRESS_SPACE_SUPPORT         CL_FALSE
+[MESA/1]    CL_DEVICE_MAX_PARAMETER_SIZE                    4096
+[MESA/1]    CL_DEVICE_QUEUE_ON_HOST_PROPERTIES              CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE | CL_QUEUE_PROFILING_ENABLE
+[MESA/1]    CL_DEVICE_DEVICE_ENQUEUE_CAPABILITIES
+[MESA/1]    CL_DEVICE_QUEUE_ON_DEVICE_PROPERTIES
+[MESA/1]    CL_DEVICE_QUEUE_ON_DEVICE_PREFERRED_SIZE        0
+[MESA/1]    CL_DEVICE_QUEUE_ON_DEVICE_MAX_SIZE              0
+[MESA/1]    CL_DEVICE_MAX_ON_DEVICE_QUEUES                  0
+[MESA/1]    CL_DEVICE_MAX_ON_DEVICE_EVENTS                  0
+[MESA/1]    CL_DEVICE_PREFERRED_INTEROP_USER_SYNC           CL_TRUE
+[MESA/1]    CL_DEVICE_PROFILING_TIMER_RESOLUTION            1
+[MESA/1]    CL_DEVICE_EXECUTION_CAPABILITIES                CL_EXEC_KERNEL
+[MESA/1]    CL_DEVICE_NON_UNIFORM_WORK_GROUP_SUPPORT        CL_FALSE
+[MESA/1]    CL_DEVICE_WORK_GROUP_COLLECTIVE_FUNCTIONS_SUPPORT  CL_FALSE
+[MESA/1]    CL_DEVICE_SUB_GROUP_INDEPENDENT_FORWARD_PROGRESS  CL_FALSE
+[MESA/1]    CL_DEVICE_IL_VERSION                            SPIR-V_1.0 SPIR-V_1.1 SPIR-V_1.2 SPIR-V_1.3 SPIR-V_1.4
+[MESA/1]    CL_DEVICE_ILS_WITH_VERSION                      SPIR-V:0x400000 SPIR-V:0x401000 SPIR-V:0x402000 SPIR-V:0x403000 SPIR-V:0x404000
+[MESA/1]    CL_DEVICE_PRINTF_BUFFER_SIZE                    1048576
+[MESA/1]    CL_DEVICE_BUILT_IN_KERNELS
+[MESA/1]    CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION
+[MESA/1]    CL_DEVICE_EXTENSIONS                            cl_khr_byte_addressable_store cl_khr_create_command_queue cl_khr_expect_assume cl_khr_extended_versioning cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_il_program cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_integer_dot_product cl_khr_spirv_no_integer_wrap_decoration cl_khr_suggested_local_work_size cl_khr_image2d_from_buffer cl_khr_3d_image_writes cl_khr_depth_images cl_khr_device_uuid cl_khr_subgroup_shuffle cl_khr_subgroup_shuffle_relative cl_arm_shared_virtual_memory
+[MESA/1]    CL_DEVICE_EXTENSIONS_WITH_VERSION               cl_khr_byte_addressable_store:0x400000 cl_khr_create_command_queue:0x400000 cl_khr_expect_assume:0x400000 cl_khr_extended_versioning:0x400000 cl_khr_global_int32_base_atomics:0x400000 cl_khr_global_int32_extended_atomics:0x400000 cl_khr_il_program:0x400000 cl_khr_local_int32_base_atomics:0x400000 cl_khr_local_int32_extended_atomics:0x400000 cl_khr_integer_dot_product:0x800000 cl_khr_spirv_no_integer_wrap_decoration:0x400000 cl_khr_suggested_local_work_size:0x400000 cl_khr_image2d_from_buffer:0x400000 cl_khr_3d_image_writes:0x400000 cl_khr_depth_images:0x400000 cl_khr_device_uuid:0x400000 cl_khr_subgroup_shuffle:0x400000 cl_khr_subgroup_shuffle_relative:0x400000 cl_arm_shared_virtual_memory:0x400000
+
+
+[OCLICD/*]   CL_ICDL_NAME                                    Khronos OpenCL ICD Loader
+[OCLICD/*]   CL_ICDL_VENDOR                                  Khronos Group
+[OCLICD/*]   CL_ICDL_VERSION                                 3.0.6
+[OCLICD/*]   CL_ICDL_OCL_VERSION                             OpenCL 3.0

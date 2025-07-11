@@ -1134,7 +1134,7 @@ type VkPhysicalDeviceVulkan12Properties struct {
 	IndependentResolve                                   bool               `json:"independentResolve"`
 	FilterMinmaxSingleComponentFormats                   bool               `json:"filterMinmaxSingleComponentFormats"`
 	FilterMinmaxImageComponentMapping                    bool               `json:"filterMinmaxImageComponentMapping"`
-	MaxTimelineSemaphoreValueDifference                  int64              `json:"maxTimelineSemaphoreValueDifference"`
+	MaxTimelineSemaphoreValueDifference                  uint64             `json:"maxTimelineSemaphoreValueDifference"`
 	FramebufferIntegerColorSampleCounts                  []string           `json:"framebufferIntegerColorSampleCounts"`
 }
 
@@ -1207,11 +1207,11 @@ type VkPhysicalDeviceVulkan14Properties struct {
 	DefaultRobustnessVertexInputs                       string `json:"defaultRobustnessVertexInputs"`
 	DefaultRobustnessImages                             string `json:"defaultRobustnessImages"`
 	CopySrcLayoutCount                                  int    `json:"copySrcLayoutCount"`
-	PCopySrcLayouts                                     string `json:"pCopySrcLayouts"`
-	CopyDstLayoutCount                                  int    `json:"copyDstLayoutCount"`
-	PCopyDstLayouts                                     string `json:"pCopyDstLayouts"`
-	OptimalTilingLayoutUUID                             []int  `json:"optimalTilingLayoutUUID"`
-	IdenticalMemoryTypeRequirements                     bool   `json:"identicalMemoryTypeRequirements"`
+	//PCopySrcLayouts                                     []string `json:"pCopySrcLayouts"`
+	CopyDstLayoutCount int `json:"copyDstLayoutCount"`
+	//PCopyDstLayouts                 string `json:"pCopyDstLayouts"`
+	OptimalTilingLayoutUUID         []int `json:"optimalTilingLayoutUUID"`
+	IdenticalMemoryTypeRequirements bool  `json:"identicalMemoryTypeRequirements"`
 }
 
 type Properties struct {
