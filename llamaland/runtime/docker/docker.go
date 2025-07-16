@@ -3,16 +3,16 @@ package docker
 import (
 	"context"
 	"errors"
-	"fmt"
 
+	"github.com/docker/docker/api/types/system"
 	"github.com/docker/docker/client"
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
 	"github.com/wvdschel/llamaland/llamaland/runtime/common"
 )
 
 type Runtime struct {
-	dockerClient      *client.Client
-	dockerRuntimeName string
+	dockerClient *client.Client
+	opts         opts
 }
 
 func AutodetectRuntime() (common.Runtime, error) {
@@ -20,28 +20,18 @@ func AutodetectRuntime() (common.Runtime, error) {
 }
 
 func NewRuntime(opts *opts) (common.Runtime, error) {
-	// TODO check available runtimes, pick one:
-	// - nvidia
-	// - rocm?
-
 	apiClient, err := client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
 		return nil, err
 	}
 
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-	info, err := apiClient.Info(ctx)
-	if err != nil {
-		return nil, fmt.Errorf("failed to get docker info: %w", err)
+	if opts == nil {
+		opts = DefaultOpts()
 	}
 
-	// TODO: process info.DiscoveredDevices
-	_ = info
-
 	return &Runtime{
-		dockerClient:      apiClient,
-		dockerRuntimeName: opts.runtime,
+		dockerClient: apiClient,
+		opts:         *opts,
 	}, nil
 }
 
@@ -50,4 +40,16 @@ func (r *Runtime) NewService(service *config.Service) common.Service {
 		runtime: r,
 		cfg:     service,
 	}
+}
+
+func SystemInfo() (system.Info, error) {
+	apiClient, err := client.NewClientWithOpts(client.FromEnv)
+	if err != nil {
+		return system.Info{}, err
+	}
+	defer apiClient.Close()
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	return apiClient.Info(ctx)
 }

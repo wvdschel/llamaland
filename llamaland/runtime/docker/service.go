@@ -94,26 +94,10 @@ func (s *Service) Prepare(ctx context.Context) error {
 				Name:              container.RestartPolicyDisabled,
 				MaximumRetryCount: 0,
 			},
-			Runtime: s.runtime.dockerRuntimeName,
+			Runtime: s.runtime.opts.runtime,
 			Resources: container.Resources{ // TODO derive from options
-				DeviceRequests: []container.DeviceRequest{
-					{
-						Count:        -1, // TODO: -1 is all GPUs, 0 is 1st, etc. (for nvidia runtime)
-						Capabilities: [][]string{{"gpu"}},
-					},
-				},
-				Devices: []container.DeviceMapping{ // Used for Vulkan & ROCm
-					{
-						PathOnHost:        "/dev/dri",
-						PathInContainer:   "/dev/dri",
-						CgroupPermissions: "rwm", // TODO
-					},
-					{
-						PathOnHost:        "/dev/kfd",
-						PathInContainer:   "/dev/kfd",
-						CgroupPermissions: "rwm",
-					},
-				},
+				DeviceRequests: s.runtime.opts.deviceRequests,
+				Devices:        s.runtime.opts.devices,
 			},
 		},
 		nil, nil, uuid.New().String())

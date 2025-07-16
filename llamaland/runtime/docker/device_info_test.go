@@ -3,7 +3,6 @@ package docker
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"testing"
 
@@ -34,7 +33,7 @@ func Test_Vulkaninfo(t *testing.T) {
 
 	logs, err := io.ReadAll(stdout)
 	assert.NoError(t, err)
-	fmt.Println(string(logs))
+	//fmt.Println(string(logs))
 
 	r := []vulkan.VulkanDeviceInfo{}
 	err = json.Unmarshal(logs, &r)
@@ -43,7 +42,7 @@ func Test_Vulkaninfo(t *testing.T) {
 }
 
 func Test_Clinfo(t *testing.T) {
-	rt, err := NewRuntime(DefaultOpts())
+	rt, err := NewRuntime(DefaultOpts().AutodetectRuntime())
 	require.NoError(t, err)
 
 	svc := rt.NewService(&config.Service{

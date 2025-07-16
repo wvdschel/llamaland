@@ -9,10 +9,8 @@ import (
 
 func ForServiceType(svcType string) (common.Runtime, error) {
 	switch svcType {
-	case "docker-nvidia":
-		return docker.NewRuntime(docker.DefaultOpts().WithRuntime("nvidia"))
 	case "docker":
-		return docker.NewRuntime(docker.DefaultOpts())
+		return docker.NewRuntime(docker.DefaultOpts().AutodetectRuntime())
 	default:
 		return nil, fmt.Errorf("unsupported service type '%s'", svcType)
 	}
