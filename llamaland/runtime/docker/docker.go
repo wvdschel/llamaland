@@ -7,7 +7,7 @@ import (
 
 	"github.com/docker/docker/client"
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
-	"github.com/wvdschel/llamaland/runtime/common"
+	"github.com/wvdschel/llamaland/llamaland/runtime/common"
 )
 
 type Runtime struct {

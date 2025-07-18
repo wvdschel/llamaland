@@ -4,7 +4,7 @@ IMAGES=$(shell find . -maxdepth 1 -mindepth 1 -type d | cut -d/ -f2- | sort)
 PUBLISH_TARGETS=$(patsubst %,publish-%,$(IMAGES))
 
 # Epoch changes every 4 days, forcing cached docker images to be rebuilt
-CACHE_EPOCH=$(shell expr $(shell date +%s) / 3600 / 24 / 14)
+CACHE_EPOCH=$(shell expr $(shell date +%s) / 3600 / 24 / 7)
 
 .PHONY: images publish force-rebuild
 

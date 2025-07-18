@@ -3,8 +3,8 @@ package runtime
 import (
 	"fmt"
 
-	"github.com/wvdschel/llamaland/runtime/common"
-	"github.com/wvdschel/llamaland/runtime/docker"
+	"github.com/wvdschel/llamaland/llamaland/runtime/common"
+	"github.com/wvdschel/llamaland/llamaland/runtime/docker"
 )
 
 func ForServiceType(svcType string) (common.Runtime, error) {

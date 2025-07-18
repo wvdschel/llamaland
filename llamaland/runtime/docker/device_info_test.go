@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
-	"github.com/wvdschel/llamaland/system/deviceinfo/opencl"
-	"github.com/wvdschel/llamaland/system/deviceinfo/vulkan"
+	"github.com/wvdschel/llamaland/llamaland/system/deviceinfo/opencl"
+	"github.com/wvdschel/llamaland/llamaland/system/deviceinfo/vulkan"
 )
 
 func Test_Vulkaninfo(t *testing.T) {

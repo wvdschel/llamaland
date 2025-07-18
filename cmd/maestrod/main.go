@@ -8,7 +8,7 @@ import (
 	"log"
 
 	"github.com/wvdschel/llamaland/cmd/maestrod/config"
-	"github.com/wvdschel/llamaland/runtime/docker"
+	"github.com/wvdschel/llamaland/llamaland/runtime/docker"
 )
 
 var configFilename = flag.String("config", config.DefaultFilename, "config file")
