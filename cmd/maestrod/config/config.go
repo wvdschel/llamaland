@@ -5,12 +5,12 @@ import (
 	"errors"
 	"os"
 
-	"github.com/wvdschel/llamaland/xdg"
+	"github.com/wvdschel/llamaland/pkg/xdg"
 )
 
 const DIRNAME = "llamaland"
 
-var DefaultFilename = xdg.ConfigHome() + "/" + DIRNAME + "/config.json"
+var DefaultFilename string = xdg.ConfigHome() + "/" + DIRNAME + "/config.json"
 
 type Config struct {
 	Models   map[string]Model   `json:"models,omitempty"`
