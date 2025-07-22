@@ -1,9 +1,7 @@
 name: Build and publish containers
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
 
 env:
   REGISTRY_USER: llamaland+github_actions 
