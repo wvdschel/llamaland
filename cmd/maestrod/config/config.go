@@ -40,10 +40,12 @@ type StorageConfig struct {
 }
 
 type Model struct {
-	Name        string `json:"name,omitempty"`
-	URL         string `json:"url,omitempty"`
-	Size        int    `json:"size,omitempty"`
-	Description string `json:"description,omitempty"`
+	Name          string `json:"name,omitempty"`
+	URL           string `json:"url,omitempty"`
+	Quant         string `json:"quant,omitempty"`
+	ContextLength int    `json:"context_length,omitempty"`
+	Size          int    `json:"size,omitempty"`
+	Description   string `json:"description,omitempty"`
 }
 
 type Runtime struct{}
@@ -106,15 +108,20 @@ func Default() *Config {
 					RequestLogging: true,
 				},
 				Models: []string{
-					"https://huggingface.co/unsloth/DeepSeek-R1-0528-Qwen3-8B-GGUF/DeepSeek-R1-0528-Qwen3-8B-UD-Q4_K_XL.gguf",
+					"DeepSeek R1 Qwen3-8B",
 				},
 			},
 		},
-		Hostname: "0.0.0.0",
-		Port:     18080,
-		TLS: TLS{
-			Cert: "",
-			Key:  "",
+		Models: map[string]Model{
+			"DeepSeek R1 Qwen3-8B": {
+				Name:          "DeepSeek R1 Qwen3-8B",
+				URL:           "https://huggingface.co/unsloth/DeepSeek-R1-0528-Qwen3-8B-GGUF",
+				Quant:         "Q6_K_XL",
+				ContextLength: 131072,
+			},
 		},
+		Hostname: "0.0.0.0",
+		Port:     18181,
+		TLS:      TLS{},
 	}
 }

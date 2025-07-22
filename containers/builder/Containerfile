@@ -1,5 +1,7 @@
 FROM quay.io/llamaland/base:latest
 ARG CACHE_EPOCH
-RUN dnf install -y git cmake llvm clang vulkan-headers vulkan-loader-devel glslc curl-devel
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
+
+RUN dnf install -y git cmake llvm clang vulkan-headers vulkan-loader-devel glslc curl-devel && dnf clean all
 WORKDIR /build
 RUN cd /build

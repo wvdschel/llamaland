@@ -1,7 +1,8 @@
 FROM quay.io/llamaland/base:latest
 ARG CACHE_EPOCH
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
 
-RUN dnf update --refresh -y && dnf install -y clinfo  rocm-opencl  intel-opencl mesa-libOpenCL mesa-dri-drivers spirv-llvm-translator spirv-tools-libs
+RUN dnf update --refresh -y && dnf install -y clinfo  rocm-opencl  intel-opencl mesa-libOpenCL mesa-dri-drivers spirv-llvm-translator spirv-tools-libs && dnf clean all
 RUN rm -f /etc/OpenCL/vendors/mesa.icd # Remove clover icd since it has been superseded by rusticl
 ENV RUSTICL_ENABLE=iris,llvmpipe,nouveau,panfrost,radeonsi
 

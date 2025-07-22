@@ -1,5 +1,7 @@
 FROM docker.io/fedora:41 AS base
 ARG CACHE_EPOCH
-RUN dnf update --refresh -y && dnf install -y vulkan-loader curl
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
+
+RUN dnf update --refresh -y && dnf install -y vulkan-loader curl && dnf clean all
 RUN date +%Y.%m.%d-%H.%M.%S > /buildtime.txt
 ADD versioninfo /versioninfo

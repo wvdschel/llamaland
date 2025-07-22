@@ -13,3 +13,6 @@ var DockerInfoAMDJson []byte
 
 //go:embed clinfo.txt
 var CLInfoOutput []byte
+
+//go:embed rocm-smi.json
+var RocmSmiJSON []byte

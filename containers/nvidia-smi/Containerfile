@@ -1,5 +1,5 @@
-FROM docker.io/fedora:41
+FROM quay.io/llamaland/base-cuda:latest
 ARG CACHE_EPOCH
 LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
 
-ENTRYPOINT ["/bin/nvidia-smi", "-q", "-x"]
+ENTRYPOINT ["/usr/bin/nvidia-smi", "-q", "-x"]

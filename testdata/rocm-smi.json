@@ -1,0 +1,25 @@
+{
+  "card0": {
+    "Temperature (Sensor edge) (C)": "43.0",
+    "sclk clock speed:": "(668Mhz)",
+    "sclk clock level:": "1",
+    "Performance Level": "auto",
+    "Current Socket Graphics Package Power (W)": "7.006",
+    "GPU use (%)": "1",
+    "VRAM Total Memory (B)": "536870912",
+    "VRAM Total Used Memory (B)": "415236096",
+    "VIS_VRAM Total Memory (B)": "536870912",
+    "VIS_VRAM Total Used Memory (B)": "415236096",
+    "GTT Total Memory (B)": "33323495424",
+    "GTT Total Used Memory (B)": "30562549760",
+    "Card Series": "Radeon 8060S Graphics",
+    "Card Model": "0x1586",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+    "Card SKU": "STRXLGEN",
+    "Subsystem ID": "-0x72ff",
+    "Device Rev": "0xd1",
+    "Node ID": "1",
+    "GUID": "59863",
+    "GFX Version": "gfx1151"
+  }
+}

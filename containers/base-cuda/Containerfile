@@ -1,2 +1,6 @@
 FROM quay.io/llamaland/base:latest
 ARG CACHE_EPOCH
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
+
+RUN dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64/cuda-fedora41.repo 
+RUN dnf install -y nvidia-driver-cuda && dnf clean all

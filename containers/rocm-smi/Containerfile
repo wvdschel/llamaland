@@ -1,0 +1,7 @@
+FROM quay.io/llamaland/base:latest
+ARG CACHE_EPOCH
+LABEL maintainer="Wim Vander Schelden <lists@fixnum.org>"
+
+RUN dnf install -y rocm-smi && dnf clean all
+
+ENTRYPOINT ["rocm-smi", "--showmeminfo", "vram", "vis_vram", "gtt", "--showpower", "--showuse", "--showtemp", "--showclocks", "--showmaxpower", "--showperflevel", "--showprofile", "--alldevices", "--showproductname", "--json"]
