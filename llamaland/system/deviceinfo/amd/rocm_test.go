@@ -34,7 +34,7 @@ func Test_RocmInfo(t *testing.T) {
 	svc := rt.NewService(&config.Service{
 		Type: "docker",
 		Spec: map[string]any{
-			"image": "quay.io/llamaland/rcom-smi:latest",
+			"image": "quay.io/llamaland/rocm-smi:latest",
 		},
 	})
 
