@@ -2,6 +2,7 @@ package amd
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"testing"
 
@@ -20,8 +21,8 @@ func TestRcomSmiParser(t *testing.T) {
 	gpu := info.GPUs["card0"]
 	assert.Equal(t, 668, gpu.CoreClockMhz)
 	assert.Equal(t, 1, gpu.CoreUsePercent)
-	assert.Equal(t, int64(536870912), gpu.MemoryTotal)
-	assert.Equal(t, int64(415236096), gpu.MemoryUsed)
+	assert.Equal(t, int64(33860366336), gpu.MemoryTotal)
+	assert.Equal(t, int64(30977785856), gpu.MemoryUsed)
 	assert.Equal(t, 7.006, gpu.PowerDrawW)
 	assert.Equal(t, "Radeon 8060S Graphics", gpu.Name)
 	assert.Equal(t, 43.0, gpu.TemperatureC)
@@ -50,4 +51,8 @@ func Test_RocmInfo(t *testing.T) {
 	deviceInfo, err := ParseRocmInfo(logs)
 	require.NoError(t, err)
 	assert.Greater(t, len(deviceInfo.GPUs), 0)
+
+	for id, gpu := range deviceInfo.GPUs {
+		fmt.Printf("%s: %s VRAM: %0.1f / %0.1f MiB used\n", id, gpu.Name, float64(gpu.MemoryUsed)/1024.0/1024.0, float64(gpu.MemoryTotal)/1024.0/1024.0)
+	}
 }

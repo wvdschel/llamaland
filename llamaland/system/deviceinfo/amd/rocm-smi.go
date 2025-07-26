@@ -67,8 +67,8 @@ func ParseRocmInfo(output []byte) (*RocmSmiInfo, error) {
 			CoreClockMhz:   parseClockSpeed(info[SHADER_CLOCK_SPEED]),
 			CoreUsePercent: parseInt(info[GPU_USE_PERCENTAGE]),
 			PowerDrawW:     parseFloat64(info[CURRENT_SOCKET_GRAPHICS_PACKAGE_POWER]),
-			MemoryTotal:    parseInt64(info[VRAM_TOTAL_MEMORY]),
-			MemoryUsed:     parseInt64(info[VRAM_TOTAL_USED_MEMORY]),
+			MemoryTotal:    parseInt64(info[VRAM_TOTAL_MEMORY]) + parseInt64(info[GTT_TOTAL_MEMORY]),
+			MemoryUsed:     parseInt64(info[VRAM_TOTAL_USED_MEMORY]) + parseInt64(info[GTT_TOTAL_USED_MEMORY]),
 			Properties:     info,
 		}
 		res.GPUs[gpuid] = gpuInfo
