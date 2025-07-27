@@ -17,9 +17,9 @@ force-rebuild:
 publish-%: % force-rebuild
 	@echo PUBLISHING $<
 	$(OCI_CMD) push $(IMAGE_PREFIX)/$<:latest 
-	$(OCI_CMD) run -it --entrypoint /versioninfo $(IMAGE_PREFIX)/$<:latest | dos2unix | xargs -i $(OCI_CMD) push $(IMAGE_PREFIX)/$<:{}
+	$(OCI_CMD) run -it --entrypoint /versioninfo $(IMAGE_PREFIX)/$<:latest | sed -e 's/\r//g' | xargs -i $(OCI_CMD) push $(IMAGE_PREFIX)/$<:{}
 
 %: %/Containerfile force-rebuild
 	@echo BUILDING $@
 	$(OCI_CMD) build --build-arg CACHE_EPOCH=$(CACHE_EPOCH) -t $(IMAGE_PREFIX)/$@:latest -f $< $@
-	$(OCI_CMD) run -it --entrypoint /versioninfo $(IMAGE_PREFIX)/$@:latest | dos2unix | xargs -i $(OCI_CMD) tag $(IMAGE_PREFIX)/$@:latest $(IMAGE_PREFIX)/$@:{}
+	$(OCI_CMD) run -it --entrypoint /versioninfo $(IMAGE_PREFIX)/$@:latest | sed -e 's/\r//g' | xargs -i $(OCI_CMD) tag $(IMAGE_PREFIX)/$@:latest $(IMAGE_PREFIX)/$@:{}
