@@ -4,9 +4,9 @@ import (
 	"encoding/xml"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/wvdschel/llamaland/testdata"
-	"gotest.tools/v3/assert"
 )
 
 func TestXMLDecode(t *testing.T) {
