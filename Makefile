@@ -5,3 +5,6 @@ containers:
 
 publish-containers:
 	$(MAKE) -C containers/ publish
+
+test:
+	cd llamaland; cargo test --all-features
