@@ -99,6 +99,7 @@ func (s *Service) Prepare(ctx context.Context) error {
 				DeviceRequests: s.runtime.opts.deviceRequests,
 				Devices:        s.runtime.opts.devices,
 			},
+			Privileged: true,
 		},
 		nil, nil, uuid.New().String())
 	if err != nil {

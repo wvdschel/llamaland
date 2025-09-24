@@ -2,7 +2,7 @@ FROM quay.io/llamaland/builder-cuda AS builder
 ARG CACHE_EPOCH
 
 RUN git clone https://github.com/ggml-org/llama.cpp
-RUN cd /build/llama.cpp && cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/llama.cpp -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES="75;80;86;89;120"
+RUN cd /build/llama.cpp && cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/llama.cpp -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES="75;80;86;89;120" -DGGML_RPC=ON
 RUN cd /build/llama.cpp && cmake --build build/ -j$(nproc)
 RUN cd /build/llama.cpp/build && make install && git log --format="%h" | head -n1 > /opt/llama.cpp/commithash
 
